@@ -6,7 +6,7 @@ import { projects } from "../data/projects";
 <BaseLayout title="Brayden Adcox | Home" description="Portfolio">
   <main class="w-full">
 
-    <section id="intro" class="min-h-screen bg-red-500">
+    <section id="intro" data-page class="min-h-screen bg-slate-950">
       <div class="mx-auto max-w-5xl px-6">
       <div class="flex min-h-screen flex-col justify-center">
         <p class="text-sm text-white/60">Brayden Adcox</p>
@@ -56,8 +56,33 @@ import { projects } from "../data/projects";
       </div>
     </section>
 
+
+        <!-- ABOUT (full page) -->
+    <section id="about" data-page class="min-h-screen border-b border-white/10 bg-slate-700">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="flex min-h-screen flex-col justify-center">
+          <h2 class="text-3xl font-semibold tracking-tight">About</h2>
+
+          <p class="mt-4 max-w-2xl text-white/70">
+            CS student focused on building real systems: reliable APIs, ML inference pipelines, and deployable services.
+            I like problems involving correctness, performance, and production constraints.
+          </p>
+
+          <div class="mt-10">
+            <a
+              href="#projects"
+              class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+            >
+              Go to Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS (full screen minimum) -->
-    <section id="projects" class="min-h-screen border-b border-white/10 py-24">
+    <section id="projects" data-page class="min-h-screen border-b border-white/10 bg-slate-900">
+      <div class="mx-auto max-w-5xl px-6 min-h-screen flex flex-col justify-center py-24">
       <h2 class="text-3xl font-semibold tracking-tight">Projects</h2>
       <p class="mt-3 max-w-2xl text-white/60">
         Selected work focused on production constraints: validation, reliability, and deployable systems.
@@ -96,69 +121,46 @@ import { projects } from "../data/projects";
           </article>
         ))}
       </div>
+        <div id="contact" class="mt-20 border-t border-white/10 pt-12">
+          <h2 class="text-3xl font-semibold tracking-tight">Contact</h2>
 
-      <div class="mt-12">
-        <a
-          href="#contact"
-          class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
-        >
-          Go to Contact
-        </a>
-      </div>
-    </section>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="mailto:braydenadcox@gmail.com">
+              Email
+            </a>
+            <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="https://github.com/braydenadcox" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="https://www.linkedin.com/in/brayden-adcox-83ab1129b/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="/BraydenAdcox_Resume.pdf" target="_blank" rel="noreferrer">
+              Resume
+            </a>
+          </div>
 
-    <!-- ABOUT (normal section) -->
-    <section id="about" class="py-24">
-      <h2 class="text-3xl font-semibold tracking-tight">About</h2>
-      <p class="mt-4 max-w-2xl text-white/70">
-        CS student focused on building real systems: reliable APIs, ML inference pipelines, and deployable services.
-        I like problems involving correctness, performance, and production constraints.
-      </p>
+          <footer class="mt-16 text-sm text-white/50">
+            © Brayden Adcox · 2026 · Built with Astro
+          </footer>
 
-      <div class="mt-10">
-        <a
-          href="#projects"
-          class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
-        >
-          Back to Projects
-        </a>
-      </div>
-    </section>
-
-    <!-- CONTACT + FOOTER (full screen) -->
-    <section id="contact" class="min-h-screen">
-      <div class="flex min-h-screen flex-col justify-center">
-        <h2 class="text-3xl font-semibold tracking-tight">Contact</h2>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="mailto:braydenadcox@gmail.com">
-            Email
-          </a>
-          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="https://github.com/braydenadcox" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="https://www.linkedin.com/in/brayden-adcox-83ab1129b/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="/BraydenAdcox_Resume.pdf" target="_blank" rel="noreferrer">
-            Resume
-          </a>
+          <div class="mt-10">
+            <a
+              href="#intro"
+              class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+            >
+              Back to top
+            </a>
+          </div>
         </div>
+      </section>
 
-        <footer class="mt-16 text-sm text-white/50">
-          © Brayden Adcox · 2026 · Built with Astro
-        </footer>
+      <button
+        id="nextBtn"
+        class="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/20 bg-black/50 px-4 py-2 text-sm text-white backdrop-blur transition hover:border-white/40"
+      >
+        ↓
+      </button>
 
-        <div class="mt-10">
-          <a
-            href="#intro"
-            class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
-          >
-            Back to top
-          </a>
-        </div>
-      </div>
-    </section>
 
   </main>
 </BaseLayout>
