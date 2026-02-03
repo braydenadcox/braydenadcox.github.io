@@ -1,0 +1,20 @@
+Introduction
+- Name, what do I do (1 line), buttons (projects, github, resume)
+
+
+Projects  
+- Top projects go in buttons, link to the deployed product if applicable, if not link to the GitHub repo
+
+
+About
+- Current focus
+- Problems I like working on & hobbies
+- Where I am and what I'm aiming for next
+
+
+Contact and Links
+- Email, GitHub, LinkedIn, resume
+
+
+Footer
+- Name, year, something fun

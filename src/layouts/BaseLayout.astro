@@ -1,0 +1,17 @@
+---
+const { title = "Brayden Adcox", description = "Portfolio" } = Astro.props;
+import { projects } from "../data/projects";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="min-h-screen bg-black text-white">
+    <slot />
+  </body>
+</html>
