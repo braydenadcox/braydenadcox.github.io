@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tri-base: 0.2s;
+}
+
+/* -------------------------
+   Floating triangle background
+   (staggered start -> steady loop)
+   ------------------------- */
+
+/* Base triangle behavior */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  opacity: 0.25;
+
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+  will-change: transform;
+
+  transform: translateX(-80vw) rotate(0deg);
+}
+
+/* Rotation direction */
+.triangle-cw  { animation-name: triangleFloatCW; }
+.triangle-ccw { animation-name: triangleFloatCCW; }
+
+/* -------------------------
+   Shapes + starting positions + durations
+   ------------------------- */
+
+/* Big isosceles */
+.triangle-1 {
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 220px solid rgb(255, 255, 255);
+  top: 12%;
+  left: -20%;
+  animation-duration: 70s;
+  animation-delay: 0.1s;     /* intro: first */
+  opacity: 0.05;
+}
+
+/* Medium very-scalene */
+.triangle-2 {
+  border-left: 60px solid transparent;
+  border-right: 180px solid transparent;
+  border-bottom: 160px solid rgba(255, 255, 255, 0.22);
+  top: 28%;
+  left: -30%;
+  animation-duration: 85s;
+  animation-delay: calc(var(--tri-base) + 1.5s);     /* intro */
+}
+
+/* Small sharp scalene */
+.triangle-3 {
+  border-left: 30px solid transparent;
+  border-right: 110px solid transparent;
+  border-bottom: 120px solid rgba(255, 255, 255, 0.18);
+  top: 52%;
+  left: -28%;
+  animation-duration: 62s;
+  animation-delay: calc(var(--tri-base) + 3.0s);    /* intro */
+}
+
+/* Flat wide triangle */
+.triangle-4 {
+  border-left: 180px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 90px solid rgba(255, 255, 255, 0.16);
+  top: 68%;
+  left: -35%;
+  animation-duration: 95s;
+  animation-delay: calc(var(--tri-base) + 4.5s);    /* intro -> transitions into steady */
+}
+
+/* Tall needle triangle (isosceles) */
+.triangle-5 {
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 260px solid rgba(255, 255, 255, 0.14);
+  top: 18%;
+  left: -25%;
+  animation-duration: 110s;
+  animation-delay: calc(var(--tri-base) + 6.0s);    /* steady spacing */
+}
+
+/* Chunky scalene */
+.triangle-6 {
+  border-left: 120px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 200px solid rgba(255, 255, 255, 0.20);
+  top: 40%;
+  left: -32%;
+  animation-duration: 78s;
+
+  /* negative delay: looks "already running" so steady-state feels real */
+  animation-delay: calc(var(--tri-base) + 7.5s);
+}
+
+/* Tiny triangle */
+.triangle-7 {
+  border-left: 18px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 70px solid rgba(255, 255, 255, 0.20);
+  top: 80%;
+  left: -28%;
+  animation-duration: 55s;
+
+  /* negative delay: deeper into loop */
+  animation-delay: calc(var(--tri-base) + 9.0s);
+}
+
+/* Huge slow background triangle */
+.triangle-8 {
+  border-left: 220px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 300px solid rgba(255, 255, 255, 0.10);
+  top: 55%;
+  left: -40%;
+  animation-duration: 140s;
+
+  /* negative delay: deepest into loop */
+  animation-delay: calc(var(--tri-base) + 11.5s);
+}
+
+/* High top-left */
+.triangle-9 {
+  border-left: 40px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 120px solid rgb(255, 255, 255);
+  top: 6%;
+  left: -25%;
+  animation-duration: 62s;
+  animation-delay: calc(var(--tri-base) + 13.0s);
+  opacity: 0.12;
+}
+
+/* Very top, tiny */
+.triangle-10 {
+  border-left: 20px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 55px solid rgb(255, 255, 255);
+  top: 2%;
+  left: -18%;
+  animation-duration: 48s;
+  animation-delay: calc(var(--tri-base) + 14.5s);
+  opacity: 0.10;
+}
+
+/* Mid-high, slim */
+.triangle-11 {
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-bottom: 140px solid rgb(255, 255, 255);
+  top: 22%;
+  left: -30%;
+  animation-duration: 90s;
+  animation-delay: calc(var(--tri-base) + 16.0s);
+  opacity: 0.11;
+}
+
+/* Lower-mid */
+.triangle-12 {
+  border-left: 60px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 150px solid rgb(255, 255, 255);
+  top: 58%;
+  left: -22%;
+  animation-duration: 72s;
+  animation-delay: calc(var(--tri-base) + 17.5s);
+  opacity: 0.14;
+}
+
+/* Very bottom, tiny */
+.triangle-13 {
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 70px solid rgb(255, 255, 255);
+  top: 92%;
+  left: -28%;
+  animation-duration: 52s;
+  animation-delay: calc(var(--tri-base) + 19.0s);
+  opacity: 0.12;
+}
+
+/* Bottom heavy */
+.triangle-14 {
+  border-left: 90px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 180px solid rgb(255, 255, 255);
+  top: 82%;
+  left: -35%;
+  animation-duration: 110s;
+  animation-delay: calc(var(--tri-base) + 20.5s);
+  opacity: 0.13;
+}
+
+/* Mid low, ultra thin */
+.triangle-15 {
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 160px solid rgb(255, 255, 255);
+  top: 66%;
+  left: -20%;
+  animation-duration: 95s;
+  animation-delay: calc(var(--tri-base) + 22.0s);
+  opacity: 0.09;
+}
+
+/* Background giant (barely visible) */
+.triangle-16 {
+  border-left: 180px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 260px solid rgb(255, 255, 255);
+  top: 10%;
+  left: -45%;
+  animation-duration: 160s;
+  animation-delay: calc(var(--tri-base) + 3.0s);
+  opacity: 0.06;
+}
+
+/* Big wide, upper band */
+.triangle-17 {
+  border-left: 260px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 220px solid rgb(255, 255, 255);
+  top: 8%;
+  left: -55%;
+  animation-duration: 190s;
+  animation-delay: calc(var(--tri-base) + 0.6s);
+  opacity: 0.05;
+}
+
+/* Huge tall, mid-high */
+.triangle-18 {
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 420px solid rgb(255, 255, 255);
+  top: 26%;
+  left: -65%;
+  animation-duration: 210s;
+  animation-delay: calc(var(--tri-base) + 5.4s);
+  opacity: 0.045;
+}
+
+/* Giant background slab, mid-low */
+.triangle-19 {
+  border-left: 320px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 360px solid rgb(255, 255, 255);
+  top: 62%;
+  left: -70%;
+  animation-duration: 240s;
+  animation-delay: calc(var(--tri-base) + 11.7s);
+  opacity: 0.04;
+}
+
+/* Big bottom anchor */
+.triangle-20 {
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  border-bottom: 380px solid rgb(255, 255, 255);
+  top: 84%;
+  left: -60%;
+  animation-duration: 220s;
+  animation-delay: calc(var(--tri-base) + 17.4s);
+  opacity: 0.032;
+}
+
+/* -------------------------
+   Keyframes
+   Left -> right drift + rotation
+   ------------------------- */
+
+@keyframes triangleFloatCW {
+  0%   { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(170vw) rotate(360deg); }
+}
+
+@keyframes triangleFloatCCW {
+  0%   { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(170vw) rotate(-360deg); }
+}
