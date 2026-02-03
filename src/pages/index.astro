@@ -3,81 +3,162 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { projects } from "../data/projects";
 ---
 
-<BaseLayout title="Brayden Adcox">
-  <main class="mx-auto max-w-5xl px-6">
-	<section id="intro" class="py-32">
-		<p class="text-sm text-white/60">Brayden Adcox</p>
-		<h1 class="mt-4 text-5xl font-semibold tracking-tight">
-			I build production-style ML services and reliable backend systems.
-		</h1>
-		<p class="mt-6 max-w-2xl text-lg text-white/70">
-			Currently building an ML fraud detection inference service with strict validation, versioned models, and clear failure semantics.
-		</p>
+<BaseLayout title="Brayden Adcox | Home" description="Portfolio">
+  <main class="w-full">
 
-  <div class="mt-10 flex flex-wrap gap-3">
-    <a href="#projects" class="rounded-xl border border-white/15 px-4 py-2 hover:border-white/30">
-      View Projects
-    </a>
-    <a href="https://github.com/braydenadcox" target="_blank" rel="noreferrer"
-       class="rounded-xl border border-white/15 px-4 py-2 hover:border-white/30">
-      GitHub
-    </a>
-    <a href="/BraydenAdcox_Resume.pdf" target="_blank" class="rounded-xl border border-white/15 px-4 py-2 hover:border-white/30">
-      Resume
-    </a>
-  </div>
-</section>
+    <section id="intro" class="min-h-screen bg-red-500">
+      <div class="mx-auto max-w-5xl px-6">
+      <div class="flex min-h-screen flex-col justify-center">
+        <p class="text-sm text-white/60">Brayden Adcox</p>
 
-    <section id="projects" class="py-32">
-      <h2 class="text-3xl font-semibold">Projects</h2>
+        <h1 class="mt-4 text-5xl font-semibold tracking-tight">
+          I build production-style ML services and reliable backend systems.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg text-white/70">
+          Currently building an ML fraud detection inference service with strict validation, versioned models, and clear failure semantics.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a
+            href="#projects"
+            class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+          >
+            View Projects
+          </a>
+
+          <a
+            href="#contact"
+            class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+          >
+            Contact
+          </a>
+
+          <a
+            href="https://github.com/braydenadcox"
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="/BraydenAdcox_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+          >
+            Resume
+          </a>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (full screen minimum) -->
+    <section id="projects" class="min-h-screen border-b border-white/10 py-24">
+      <h2 class="text-3xl font-semibold tracking-tight">Projects</h2>
+      <p class="mt-3 max-w-2xl text-white/60">
+        Selected work focused on production constraints: validation, reliability, and deployable systems.
+      </p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
         {projects.map((p) => (
-          <article class="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/25 hover:bg-white/10">
-            <h3 class="text-xl font-semibold">{p.title}</h3>
-            <p class="mt-3 text-white/70">{p.summary}</p>
+          <article class="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/25 hover:bg-white/10">
+            <div class="flex h-full flex-col">
+              <div>
+                <h3 class="text-xl font-semibold tracking-tight">{p.title}</h3>
+                <p class="mt-3 text-white/70">{p.summary}</p>
+              </div>
 
-            <div class="mt-4 flex flex-wrap gap-2">
-              {p.tech.map((t) => (
-                <span class="rounded-full border border-white/10 px-3 py-1 text-sm text-white/70">
-                  {t}
-                </span>
-              ))}
-            </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                {p.tech.map((t) => (
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70">
+                    {t}
+                  </span>
+                ))}
+              </div>
 
-            <div class="mt-6 flex gap-4">
-              {p.links.map((l) => (
-                <a class="underline text-white/80 hover:text-white" href={l.href} target="_blank" rel="noreferrer">
-                  {l.label}
-                </a>
-              ))}
+              <div class="mt-6 flex gap-4 pt-2">
+                {p.links.map((l) => (
+                  <a
+                    class="text-white/80 underline-offset-4 transition hover:text-white hover:underline"
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </article>
         ))}
       </div>
+
+      <div class="mt-12">
+        <a
+          href="#contact"
+          class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+        >
+          Go to Contact
+        </a>
+      </div>
     </section>
 
-		<section id="about" class="py-32">
-	<h2 class="text-3xl font-semibold">About</h2>
-	<p class="mt-4 max-w-2xl text-white/70">
-		CS student focused on building real systems: reliable APIs, ML inference pipelines, and deployable services.
-		I like problems involving correctness, performance, and production constraints.
-	</p>
-	</section>
+    <!-- ABOUT (normal section) -->
+    <section id="about" class="py-24">
+      <h2 class="text-3xl font-semibold tracking-tight">About</h2>
+      <p class="mt-4 max-w-2xl text-white/70">
+        CS student focused on building real systems: reliable APIs, ML inference pipelines, and deployable services.
+        I like problems involving correctness, performance, and production constraints.
+      </p>
 
-	<section id="contact" class="py-32">
-	<h2 class="text-3xl font-semibold">Contact</h2>
-	<div class="mt-6 flex flex-wrap gap-4">
-		<a class="underline text-white/80 hover:text-white" href="mailto:braydenadcox@gmail.com">Email</a>
-		<a class="underline text-white/80 hover:text-white" href="https://github.com/braydenadcox" target="_blank" rel="noreferrer">GitHub</a>
-		<a class="underline text-white/80 hover:text-white" href="https://www.linkedin.com/in/brayden-adcox-83ab1129b/" target="_blank" rel="noreferrer">LinkedIn</a>
-		<a class="underline text-white/80 hover:text-white" href="/BraydenAdcox_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-	</div>
-	</section>
+      <div class="mt-10">
+        <a
+          href="#projects"
+          class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+        >
+          Back to Projects
+        </a>
+      </div>
+    </section>
 
-	<footer class="py-16 text-sm text-white/50">
-	© Brayden Adcox · 2026 · Built with Astro
-	</footer>
+    <!-- CONTACT + FOOTER (full screen) -->
+    <section id="contact" class="min-h-screen">
+      <div class="flex min-h-screen flex-col justify-center">
+        <h2 class="text-3xl font-semibold tracking-tight">Contact</h2>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="mailto:braydenadcox@gmail.com">
+            Email
+          </a>
+          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="https://github.com/braydenadcox" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="https://www.linkedin.com/in/brayden-adcox-83ab1129b/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a class="text-white/80 underline-offset-4 transition hover:text-white hover:underline" href="/BraydenAdcox_Resume.pdf" target="_blank" rel="noreferrer">
+            Resume
+          </a>
+        </div>
+
+        <footer class="mt-16 text-sm text-white/50">
+          © Brayden Adcox · 2026 · Built with Astro
+        </footer>
+
+        <div class="mt-10">
+          <a
+            href="#intro"
+            class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+          >
+            Back to top
+          </a>
+        </div>
+      </div>
+    </section>
 
   </main>
 </BaseLayout>
