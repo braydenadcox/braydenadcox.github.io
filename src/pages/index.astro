@@ -161,6 +161,36 @@ import { projects } from "../data/projects";
         ↓
       </button>
 
+      <script is:inline>
+        const pages = Array.from(document.querySelectorAll("[data-page]"));
+        const btn = document.getElementById("nextBtn");
+
+        function currentPageIndex() {
+          const y = window.scrollY;
+          let idx = 0;
+
+          for (let i = 0; i < pages.length; i++) {
+            if (pages[i].offsetTop <= y + 10) idx = i;
+          }
+          return idx;
+        }
+
+        btn.addEventListener("click", () => {
+          const i = currentPageIndex();
+          const next = pages[i + 1];
+          if (next) next.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            btn.hidden = entry.isIntersecting;
+          },
+          { threshold: 0.6 }
+        );
+
+        observer.observe(pages[pages.length - 1]);
+      </script>
+
 
   </main>
 </BaseLayout>
