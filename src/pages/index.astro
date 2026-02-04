@@ -58,7 +58,7 @@ import { projects } from "../data/projects";
                     text-white/80 text-sm transition hover:border-white/40 hover:text-white
                     opacity-0 -translate-x-8 animate-fade-in-left [animation-delay:1600ms]"
             >
-              Learn more about what I do →
+              Learn more about what I do
             </a>
           </div>
 
@@ -68,7 +68,7 @@ import { projects } from "../data/projects";
                   opacity-0 translate-x-8 animate-fade-in-right [animation-delay:1000ms]"
           >
             <img
-              src="public/me.PNG"
+              src="/me.PNG"
               alt="Brayden"
               class="w-full h-full object-cover"
             />
@@ -84,30 +84,62 @@ import { projects } from "../data/projects";
 
 
         <!-- ABOUT (full page) -->
-    <section id="about" data-page class="min-h-screen border-b border-white/10 bg-slate-700">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="flex min-h-screen flex-col justify-center">
-          <h2 class="text-3xl font-semibold tracking-tight">About</h2>
+      <section id="about" data-page class="min-h-screen border-b border-white/10 bg-[#1f1f1f]">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="flex min-h-screen flex-col justify-center">
+            <h2 class="text-5xl font-bold tracking-tight">About Me</h2>
 
-          <p class="mt-4 max-w-2xl text-white/70">
-            CS student focused on building real systems: reliable APIs, ML inference pipelines, and deployable services.
-            I like problems involving correctness, performance, and production constraints.
-          </p>
+            <!-- 3-column layout -->
+            <div class="mt-14 grid gap-y-12 gap-x-28 md:grid-cols-3 lg:gap-x-36">
+              
+              <!-- Who Am I -->
+              <div class="space-y-3">
+                <h3 class="text-xl font-semibold tracking-tight">Who Am I?</h3>
+                <p class="mt-3 text-white/70">
+                  I'm a 3rd-year student at Pacific Lutheran University studying in the 3-2 Engineering Program and will be finishing up my
+                  academics in 2028 at Columbia University studying Computer Science. I work mainly in Machine Learning and enjoy working on
+                  systems where quality, usage, and deployment matter just as performance. I am most proficient in Python, and I also have
+                  experience with Java, JavaScript, and frontend development such as React and Next.js.
+                </p>
+              </div>
 
-          <div class="mt-10">
-            <a
-              href="#projects"
-              class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
-            >
-              Go to Projects
-            </a>
+              <!-- What Have I Been Up To -->
+              <div class="space-y-3">
+                <h3 class="text-xl font-semibold tracking-tight">What Have I Been Up To?</h3>
+                <p class="mt-3 text-white/70">
+                  In the midst of baseball season this Spring, I have been working on applied machine learning projects that focus a little more on
+                  real-world usage instead of solo experiments. I am currently developing a machine-learning inference system that has been deployed
+                  via Google Cloud Run, plus a few other smaller projects that focus on aid in things that I enjoy doing. 
+                </p>
+              </div>
+
+              <!-- Outside of Tech -->
+              <div class="space-y-3">
+                <h3 class="text-xl font-semibold tracking-tight">Who Am I Outside of Tech?</h3>
+                <p class="mt-3 text-white/70">
+                  Outside of my work in tech, I enjoy playing sports, keeping myself in shape through lifting + other activities, and playing Minecraft. I 
+                  am a huge fan of anything winter and mountain-related (skiing, mountaineering, hiking, stargazing, etc.), and am an outfielder for my university's baseball team. 
+                  I am a huge fan of Demon Slayer, Death Note, and my first choice of music is always R&B. 
+                </p>
+              </div>
+
+            </div>
+
+            <div class="mt-14">
+              <a
+                href="#projects"
+                class="rounded-xl border border-white/15 px-4 py-2 text-white/90 transition hover:border-white/30 hover:text-white"
+              >
+                See My Projects
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
 
     <!-- PROJECTS (full screen minimum) -->
-    <section id="projects" data-page class="min-h-screen border-b border-white/10 bg-slate-900">
+    <section id="projects" data-page class="min-h-screen border-b border-white/10 bg-[#020617]">
       <div class="mx-auto max-w-5xl px-6 min-h-screen flex flex-col justify-center py-24">
       <h2 class="text-3xl font-semibold tracking-tight">Projects</h2>
       <p class="mt-3 max-w-2xl text-white/60">
